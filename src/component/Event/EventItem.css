@@ -1,18 +1,18 @@
 .event-container{
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;;
-  justify-content: space-between;
-  margin-top: 2%;
+  flex-wrap: wrap;
+  /* list-style: none; */
+  margin: 0;
+  padding: 0;
 }
 
 .card {
     overflow: hidden;
     display: grid;
-    grid-template-columns: 500px;
-    grid-template-rows: 210px 210px 60px;
+    grid-template-columns: 100%;
+    grid-template-rows: 250px 210px 60px;
     grid-template-areas: "image" "text" "stats";
-    width: 500px;
+    width: 30%;;
     border-radius: 18px;
     background: white;
     /* box-shadow: 2px 0px 10px rgba(0,0,0,0.9); */
@@ -53,9 +53,11 @@
     /* margin-bottom: 10px; */
   }
   .card-text p {
-    color: grey;
-    font-size:15px;
-    font-weight: 300;
+    flex: 1 1 auto;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    color: #63666A;
     /* white-space: nowrap;
     overflow: hidden;
     height: 80px;
@@ -68,13 +70,21 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
   }
-  .card-text h2 {
+  .card-text span{
+    color: #63666A;
+  }
+  .title{
     margin-top:4px;
-    font-size:28px;
+    /* font-size:28px; */
     /* word-wrap: break-word; */
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    color: #63666A;
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
 
   .card-text span{
@@ -92,9 +102,10 @@
     grid-template-rows: 1fr; */
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    background: rgb(42, 129, 243);
+    background: transparent;
     width: 100%;
     margin-bottom: 0px;
+    border-top: 1px solid #63666a40;
   }
 
   .card-stats .stat {
@@ -102,11 +113,22 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-size: 25px;
-    color: white;
+    font-size: 20px;
+    color: gray;
   }
   .card:hover {
     transform: scale(1.05);
     box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
   }
   
+
+  @media only screen and (max-width: 990px) {
+    .card {
+      grid-template-columns: 450px;
+      width:450px;
+    }
+    .event-container{
+      justify-content: center;
+    }
+
+  }

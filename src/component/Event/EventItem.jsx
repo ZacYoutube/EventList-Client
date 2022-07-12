@@ -36,9 +36,9 @@ function EventItem(props){
         {
             !eventData || eventData.length === 0 ? "loading" : eventData.map((item)=>{
                 return <div className="card" onClick={()=>{redirect(item)}}>
-                    <img className="card-image" src={item.eventImg} width="500" height="290" alt=""/>
+                    <img className="card-image" src={item.eventImg} width="100%" height="100%" alt=""/>
                     <div className="card-text">
-                        <h2>{item.eventName}</h2>
+                        <span className="title">{item.eventName}</span>
                         <p>{item.eventDescription}</p>
                         <span>Location: {item.eventLocation}</span>
                         <div className="date">{new Date(item.eventDate).toLocaleDateString()}</div>
