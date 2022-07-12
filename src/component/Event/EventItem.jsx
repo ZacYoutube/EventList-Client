@@ -36,7 +36,7 @@ function EventItem(props){
         {
             !eventData || eventData.length === 0 ? "loading" : eventData.map((item)=>{
                 return <div className="card" onClick={()=>{redirect(item)}}>
-                    <img className="card-image" src={item.eventImg} width="400" height="230" alt=""/>
+                    <img className="card-image" src={item.eventImg} width="350" height="230" alt=""/>
                     <div className="card-text">
                         <h2>{item.eventName}</h2>
                         <p>{item.eventDescription}</p>
