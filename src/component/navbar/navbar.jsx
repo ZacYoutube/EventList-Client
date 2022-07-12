@@ -50,7 +50,7 @@ function Navbar(){
                 <Link class="nav-link" to="/createEvent">Post</Link>
             </li>
             <li class="nav-item">
-                <Link class="nav-link" to="/login" onClick={()=>signOut()}>{user === "null" ? "Login" : user}</Link>
+                <Link class="nav-link" to="/login" onClick={()=>signOut()}>{user === "null" || user === null? "Login" : user}</Link>
             </li>
             </ul>
         </div>
