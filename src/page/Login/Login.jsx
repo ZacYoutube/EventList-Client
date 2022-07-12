@@ -23,7 +23,7 @@ function Login(){
     //   }
     async function loginUser(e) {
         e.preventDefault();
-        const user = await axios.get(`http://localhost:9000/users/login/${username}`);
+        const user = await axios.get(`https://z-event-list.herokuapp.com/users/login/${username}`);
         // console.log(username, user.data)
         if(user.data.password === password){
             setIsCredentialCorrect(true);

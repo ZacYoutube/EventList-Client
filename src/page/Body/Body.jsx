@@ -14,7 +14,7 @@ function Body(){
       }, []);
 
     const getEvents = async () => {
-        const events = await axios.get(`http://localhost:9000/events/`);
+        const events = await axios.get(`https://z-event-list.herokuapp.com/events/`);
         setEvent(events.data)
         // console.log(events)
     }

@@ -45,7 +45,7 @@ function CreateEvent(){
         if(localStorage.getItem("username") !== "null"){
             setIsLoggedIn(false);
             if(location.state && location.state.props){
-                await axios.patch(`http://localhost:9000/events/${location.state.props.eventId}`,{
+                await axios.patch(`https://z-event-list.herokuapp.com/${location.state.props.eventId}`,{
                     eventName: eventName,
                     eventDescription: eventDesc,
                     eventLocation: eventLoc,
@@ -56,8 +56,8 @@ function CreateEvent(){
                     console.log(res);
                 });
             }else{
-                const user =  await axios.get(`http://localhost:9000/users/login/${localStorage.getItem("username")}`);
-                await axios.post(`http://localhost:9000/events/`,{
+                const user =  await axios.get(`https://z-event-list.herokuapp.com/users/login/${localStorage.getItem("username")}`);
+                await axios.post(`https://z-event-list.herokuapp.com/events/`,{
                     eventId: nextId(),
                     eventName: eventName,
                     eventDescription: eventDesc,

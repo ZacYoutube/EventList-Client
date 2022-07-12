@@ -17,7 +17,7 @@ function ViewDetail(){
     },[])
 
     const getUser = async () => {
-        const user = await axios.get(`http://localhost:9000/users/${location.state.userId}`);
+        const user = await axios.get(`https://z-event-list.herokuapp.com/users/${location.state.userId}`);
         setUser(user.data);
     }
 
@@ -30,7 +30,7 @@ function ViewDetail(){
     const deletePost = async(e, id) => {
         e.preventDefault();
         console.log(id)
-        await axios.delete(`http://localhost:9000/events/${id}`).then(function(res){
+        await axios.delete(`https://z-event-list.herokuapp.com/events/${id}`).then(function(res){
             navigate('/')
             console.log(res);
         })
