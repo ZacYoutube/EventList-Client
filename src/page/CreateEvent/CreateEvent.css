@@ -22,3 +22,10 @@
     margin-top: 20px;
     width: 500px;
 }
+
+@media only screen and (max-width: 600px) {
+  .create-event-container {
+    width: 90%;
+    margin: auto;
+  }
+}

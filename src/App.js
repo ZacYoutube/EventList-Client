@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 import Body from './page/Body/Body';
 import CreateEvent from './page/CreateEvent/CreateEvent';
 import Login from './page/Login/Login';
-import Navbar from './component/navbar/navbar';
+import Header from './component/navbar/navbar';
 import ViewDetail from './page/Details/viewDetals';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import { UserContext } from './context/context';
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
     <div className="App">
         <Router>
           {/* <UserContext.Provider value={[token, setToken]}> */}
-          <Navbar></Navbar>
+          <Header></Header>
           <Routes>
             <Route path='/' element={<Body />} />
             <Route path='/createEvent' element={<CreateEvent />} />

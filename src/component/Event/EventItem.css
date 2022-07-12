@@ -4,6 +4,7 @@
   /* list-style: none; */
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 .card {
@@ -122,13 +123,15 @@
   }
   
 
-  @media only screen and (max-width: 990px) {
+  @media only screen and (max-width: 1000px) {
     .card {
-      grid-template-columns: 450px;
-      width:450px;
+      grid-template-columns: 100%;
+      width:100%;
     }
     .event-container{
       justify-content: center;
+      width: 90%;
+      margin: auto;
     }
 
   }

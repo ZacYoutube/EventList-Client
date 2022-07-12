@@ -9,8 +9,13 @@ import {
 import "./navbar.css";
 import {UserContext} from '../../context/context';
 import Logo from "./logo-wobg.png";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
-function Navbar(){
+
+function Header(){
     // const [token, setToken] = useContext(UserContext);
     
     const [user, setUser] = useState(null);
@@ -18,7 +23,6 @@ function Navbar(){
     useEffect(()=>{    
         setUser(localStorage.getItem('username'));
         window.addEventListener('storage', storageEventHandler, false);
-
     },[])
 
     function storageEventHandler() {
@@ -37,26 +41,21 @@ function Navbar(){
     }
     console.log(localStorage.getItem('username'))
     return(
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/"><img src={Logo} width="70" height="60" alt=""/><span style={{color: "#8B0D19"}}>Event List</span></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-            <li class="nav-item active">
-                <Link class="nav-link" to="/">Home <span class="sr-only">(current)</span></Link>
-            </li>
-            <li class="nav-item">
-                <Link class="nav-link" to="/createEvent">Post</Link>
-            </li>
-            <li class="nav-item">
-                <Link class="nav-link" to="/login" onClick={()=>signOut()}>{user === "null" || user === null? "Login" : user}</Link>
-            </li>
-            </ul>
-        </div>
-        </nav>
+        <Navbar bg="light" expand="lg">
+            <Container>
+                <Navbar.Brand href="#home"><img src={Logo} width="70" height="60" alt=""/><span style={{color: "#8B0D19"}}>Event List</span></Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="me-auto">
+                    <Nav.Link as={Link} to="/">Home</Nav.Link>
+                    <Nav.Link as={Link} to="/createEvent">Post</Nav.Link>
+                    <Nav.Link as={Link} to="/login" onClick={()=>signOut()}>{user === "null" || user === null? "Login" : user}</Nav.Link>
+                </Nav>
+                </Navbar.Collapse>
+      </Container>
+    </Navbar>
+        
     )
 }
 
-export default Navbar;
+export default Header;
