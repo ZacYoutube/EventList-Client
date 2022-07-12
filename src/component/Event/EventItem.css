@@ -1,7 +1,8 @@
 .event-container{
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: wrap;;
+  justify-content: space-between;
   margin-top: 2%;
 }
 
@@ -19,7 +20,9 @@
     text-align: center;
     transition: 0.5s ease;
     cursor: pointer;
-    margin:20px;
+    margin:35px;
+    /* margin: auto; */
+    /* margin-bottom: 30px !important; */
   }
   .card-image {
     grid-area: image;

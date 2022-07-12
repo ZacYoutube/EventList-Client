@@ -8,6 +8,7 @@ import {
   } from "react-router-dom";
 import "./navbar.css";
 import {UserContext} from '../../context/context';
+import Logo from "./logo-wobg.png";
 
 function Navbar(){
     // const [token, setToken] = useContext(UserContext);
@@ -37,7 +38,7 @@ function Navbar(){
     console.log(localStorage.getItem('username'))
     return(
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">EventList</a>
+        <a class="navbar-brand" href="/"><img src={Logo} width="70" height="60" alt=""/><span style={{color: "#8B0D19"}}>Event List</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

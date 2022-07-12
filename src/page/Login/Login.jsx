@@ -24,7 +24,8 @@ function Login(){
     async function loginUser(e) {
         e.preventDefault();
         const user = await axios.get(`https://z-event-list.herokuapp.com/users/login/${username}`);
-        // console.log(username, user.data)
+        if(!user.data)
+            setIsCredentialCorrect(false);
         if(user.data.password === password){
             setIsCredentialCorrect(true);
             localStorage.setItem("username", username);
@@ -35,7 +36,7 @@ function Login(){
         else{
             setIsCredentialCorrect(false);
             localStorage.setItem("username", null);
-            console.log("not ")
+            // console.log("not ")
         }
 
 

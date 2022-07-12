@@ -45,7 +45,7 @@ function CreateEvent(){
         if(localStorage.getItem("username") !== "null"){
             setIsLoggedIn(false);
             if(location.state && location.state.props){
-                await axios.patch(`https://z-event-list.herokuapp.com/${location.state.props.eventId}`,{
+                await axios.patch(`https://z-event-list.herokuapp.com/events/${location.state.props.eventId}`,{
                     eventName: eventName,
                     eventDescription: eventDesc,
                     eventLocation: eventLoc,
