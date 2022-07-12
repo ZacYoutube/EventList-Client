@@ -1,0 +1,15 @@
+.navbar div{
+    display: flex;
+    justify-content: end;
+}
+
+.navbar div ul{
+    width: 45%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar-brand{
+    margin-left: 5%;
+}
+
