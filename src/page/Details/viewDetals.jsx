@@ -43,7 +43,7 @@ function ViewDetail(){
             <h2>{location.state.eventName}</h2>
             <span>{location.state.eventDescription}</span>
             <br />
-            <img src={location.state.eventImg} width="600" height="400" alt="" />
+            <img src={location.state.eventImg} width="600" height="400" alt="" className="img-class"/>
             <br />
             <div>{formatDate(location.state.eventDate)}</div>
             <br />
