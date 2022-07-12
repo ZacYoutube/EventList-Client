@@ -8,6 +8,7 @@
 } */
 
 .create-event-container {
+    overflow: hidden;
     width: 500px;
     clear: both;
     margin: auto;
@@ -28,4 +29,7 @@
     width: 90%;
     margin: auto;
   }
+  .btn{
+    width: 100%;
+}
 }
