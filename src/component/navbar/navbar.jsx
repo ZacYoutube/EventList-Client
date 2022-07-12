@@ -43,7 +43,7 @@ function Header(){
     return(
         <Navbar bg="light" expand="lg">
             <Container>
-                <Navbar.Brand href="#home"><img src={Logo} width="70" height="60" alt=""/><span style={{color: "#8B0D19"}}>Event List</span></Navbar.Brand>
+                <Navbar.Brand href="/"><img src={Logo} width="70" height="60" alt=""/><span style={{color: "#8B0D19"}}>Event List</span></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
